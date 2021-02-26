@@ -10,9 +10,9 @@ const server = express();
 server.use(logger('short'));
 
 // Error message functionality
-server.use(function(req, res) {
-    res.status(404).send("Ain't nobody got time for that!");
-});
+// server.use(function(req, res) {
+//     res.status(404).send("Ain't nobody got time for that!");
+// });
 
 // Routes
 server.use('/users', userRoutes);

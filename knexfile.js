@@ -4,14 +4,16 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: process.env.DB_URL,
+    connection: 'postgres://localhost/tfte',
     migrations: {
       directory: './data/migrations',
     },
-    seeds: { directory: './data/seeds' }
+    seeds: { directory: './data/seeds' },
+    useNullAsDefault: true
   },
 
   // These will need to be changed later
+  // In the example they were both the same as development
   staging: {
     client: 'pg',
     connection: {

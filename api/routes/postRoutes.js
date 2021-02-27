@@ -7,7 +7,7 @@ const db = require('../../data/dbConfig');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-// GET all users
+// GET all posts
 router.get('/', async (req, res) => {
     await db('posts')
     .then(posts => {

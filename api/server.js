@@ -1,5 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
+const cors = require('cors');
 
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
@@ -13,10 +14,21 @@ server.use(logger('short'));
 // server.use(function(req, res) {
 //     res.status(404).send("Ain't nobody got time for that!");
 // });
+server.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Routes
 server.use('/users', userRoutes);
 server.use('/posts', postRoutes);
+
+// server.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
 
 server.use('/', (req, res) => {
     res.send('Backend is running.');

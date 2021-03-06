@@ -34,6 +34,21 @@ router.get('/:id', async (req, res) => {
     });
 });
 
+router.get('/category/:cat', async (req, res) => {
+    const { cat } = req.params;
+    await db('posts').where({ category: cat })
+    .then(posts => {
+        if(posts) {
+            res.status(200).json(posts);
+        } else {
+            res.status(404).json({ message: 'There are no posts matching that cetegory.'});
+        }
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'Failed to get category posts.'});
+    });
+});
+
 // POST new post
 router.post('/', jsonParser, async (req, res) => {
     await db('posts').insert(req.body)

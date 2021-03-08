@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('posts', function(tbl) {
-        tbl.increments('id').unsigned().primary();
+        tbl.increments('id');
         tbl.date('created_date').notNull();
         tbl.date('updated_date').nullable();
         tbl.date('deleted_date').nullable();

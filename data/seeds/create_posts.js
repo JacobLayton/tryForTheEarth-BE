@@ -6,7 +6,6 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('posts').insert([
         {
-          id: 1,
           created_date: '2021-02-01',
           updated_date: '2021-02-04',
           deleted_date: null,
@@ -17,7 +16,6 @@ exports.seed = function(knex) {
           category: 'minimalism'
         },
         {
-          id: 2,
           created_date: '2021-02-05',
           updated_date: '2021-02-08',
           deleted_date: null,
@@ -28,7 +26,6 @@ exports.seed = function(knex) {
           category: 'minimalism'
         },
         {
-          id: 3,
           created_date: '2021-02-09',
           updated_date: null,
           deleted_date: null,
@@ -39,7 +36,6 @@ exports.seed = function(knex) {
           category: 'minimalism'
         },
         {
-          id: 4,
           created_date: '2021-02-10',
           updated_date: '2021-02-11',
           deleted_date: null,
@@ -50,7 +46,6 @@ exports.seed = function(knex) {
           category: 'lifestyle'
         },
         {
-          id: 5,
           created_date: '2021-02-12',
           updated_date: '2021-02-13',
           deleted_date: null,
@@ -61,7 +56,6 @@ exports.seed = function(knex) {
           category: 'lifestyle'
         },
         {
-          id: 6,
           created_date: '2021-02-15',
           updated_date: null,
           deleted_date: null,
@@ -72,7 +66,6 @@ exports.seed = function(knex) {
           category: 'lifestyle'
         },
         {
-          id: 7,
           created_date: '2021-02-16',
           updated_date: '2021-02-17',
           deleted_date: null,
@@ -83,7 +76,6 @@ exports.seed = function(knex) {
           category: 'forthehome'
         },
         {
-          id: 8,
           created_date: '2021-02-18',
           updated_date: '2021-02-19',
           deleted_date: null,
@@ -94,7 +86,6 @@ exports.seed = function(knex) {
           category: 'forthehome'
         },
         {
-          id: 9,
           created_date: '2021-02-25',
           updated_date: null,
           deleted_date: null,

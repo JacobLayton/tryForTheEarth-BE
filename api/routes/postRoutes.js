@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
     });
 });
 
+// GET all posts of category
 router.get('/category/:cat', async (req, res) => {
     const { cat } = req.params;
     await db('posts').where({ category: cat })

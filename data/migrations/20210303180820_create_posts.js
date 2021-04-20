@@ -10,7 +10,8 @@ exports.up = function(knex, Promise) {
         tbl.text('image_url').notNull();
         tbl.text('blurb').notNull();
         tbl.text('content').notNull();
-        tbl.enum('category', ['minimalism', 'lifestyle', 'forthehome']).notNull();
+        tbl.enum('category', ['product_reviews', 'lifestyle', 'for_the_home', 'minimalism']).notNull();
+        tbl.integer('category_int').notNull();
     })
   };
   

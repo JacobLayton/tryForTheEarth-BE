@@ -16,7 +16,7 @@ module.exports = {
 
   development: {
     ...sharedConfig,
-    connection: 'postgres://localhost/tfte',
+    connection: 'postgres://localhost/tfte?sslmode=disable',
     useNullAsDefault: true
   },
 

@@ -69,10 +69,12 @@ router.post('/', checkJwt, jsonParser, async (req, res) => {
 
 // PUT edit post
 router.put('/:id', checkJwt, jsonParser, async (req, res) => {
+    console.log('inside put request');
     const { id } = req.params;
     await db('posts').where({ id: id })
     .update(req.body)
     .then(updatedPost => {
+        console.log('updatedpost is true');
         if(updatedPost) {
             return res.status(200).json({ message: 'Post was successfully updated.' });
         } else {
@@ -80,6 +82,7 @@ router.put('/:id', checkJwt, jsonParser, async (req, res) => {
         }
     })
     .catch(err => {
+        console.log('err: ', err);
         return res.status(500).json(err);
     });
 
